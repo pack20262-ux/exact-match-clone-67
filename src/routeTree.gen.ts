@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as IntroRouteImport } from './routes/intro'
+import { Route as PagamentoRouteImport } from './routes/pagamento'
 import { Route as PlanoRouteImport } from './routes/plano'
 import { Route as PremiumRouteImport } from './routes/premium'
 import { Route as QuizFrequenciaRouteImport } from './routes/quiz.frequencia'
@@ -25,6 +26,11 @@ const IndexRoute = IndexRouteImport.update({
 const IntroRoute = IntroRouteImport.update({
   id: '/intro',
   path: '/intro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PagamentoRoute = PagamentoRouteImport.update({
+  id: '/pagamento',
+  path: '/pagamento',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlanoRoute = PlanoRouteImport.update({
@@ -56,6 +62,7 @@ const QuizObjetivoRoute = QuizObjetivoRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/intro': typeof IntroRoute
+  '/pagamento': typeof PagamentoRoute
   '/plano': typeof PlanoRoute
   '/premium': typeof PremiumRoute
   '/quiz/frequencia': typeof QuizFrequenciaRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/intro': typeof IntroRoute
+  '/pagamento': typeof PagamentoRoute
   '/plano': typeof PlanoRoute
   '/premium': typeof PremiumRoute
   '/quiz/frequencia': typeof QuizFrequenciaRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/intro': typeof IntroRoute
+  '/pagamento': typeof PagamentoRoute
   '/plano': typeof PlanoRoute
   '/premium': typeof PremiumRoute
   '/quiz/frequencia': typeof QuizFrequenciaRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/intro'
+    | '/pagamento'
     | '/plano'
     | '/premium'
     | '/quiz/frequencia'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/intro'
+    | '/pagamento'
     | '/plano'
     | '/premium'
     | '/quiz/frequencia'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/intro'
+    | '/pagamento'
     | '/plano'
     | '/premium'
     | '/quiz/frequencia'
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   IntroRoute: typeof IntroRoute
+  PagamentoRoute: typeof PagamentoRoute
   PlanoRoute: typeof PlanoRoute
   PremiumRoute: typeof PremiumRoute
   QuizFrequenciaRoute: typeof QuizFrequenciaRoute
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/intro'
       fullPath: '/intro'
       preLoaderRoute: typeof IntroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pagamento': {
+      id: '/pagamento'
+      path: '/pagamento'
+      fullPath: '/pagamento'
+      preLoaderRoute: typeof PagamentoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/plano': {
@@ -178,6 +198,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   IntroRoute: IntroRoute,
+  PagamentoRoute: PagamentoRoute,
   PlanoRoute: PlanoRoute,
   PremiumRoute: PremiumRoute,
   QuizFrequenciaRoute: QuizFrequenciaRoute,
