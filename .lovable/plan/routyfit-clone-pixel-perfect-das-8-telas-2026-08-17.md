@@ -30,4 +30,20 @@ Navegação encadeada na ordem acima (cada botão leva à próxima tela). Seleç
 - Ícones: `lucide-react` (dumbbell, cloud, calendar, target, flame, crown, lock, check, home, trees, arrow-right).
 - Fonte: família geométrica bold próxima do mockup carregada via `<link>` no `__root.tsx`.
 - Imagem da tela 1: uma única geração (atleta de costas em academia escura, perfil, luz lateral) salva em `src/assets/`; sem variações extras.
-- Metadados `head()` próprios por rota (título/descrição/og).
+- CRITICAL VISUAL REQUIREMENT
+  The attached reference image is the final approved design.
+  Target accuracy: 98-100%.
+  Do not approximate.
+  Do not create alternatives.
+  Do not generate new layouts.
+  Do not improve UX.
+  Do not modernize UI.
+  Do not change spacing.
+  Do not change proportions.
+  Do not change image crop.
+  Do not change button sizes.
+  Do not change card dimensions.
+  Do not change typography hierarchy.
+  Every screen must visually match the reference image as closely as possible.
+  If there is any conflict between this specification and the reference image, the reference image always wins.
+  &nbsp;

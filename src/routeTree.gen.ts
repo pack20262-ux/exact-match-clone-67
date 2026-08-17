@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as IntroRouteImport } from './routes/intro'
+import { Route as PagamentoRouteImport } from './routes/pagamento'
+import { Route as PlanoRouteImport } from './routes/plano'
+import { Route as PremiumRouteImport } from './routes/premium'
+import { Route as QuizFrequenciaRouteImport } from './routes/quiz.frequencia'
+import { Route as QuizLocalRouteImport } from './routes/quiz.local'
+import { Route as QuizObjetivoRouteImport } from './routes/quiz.objetivo'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IntroRoute = IntroRouteImport.update({
+  id: '/intro',
+  path: '/intro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PagamentoRoute = PagamentoRouteImport.update({
+  id: '/pagamento',
+  path: '/pagamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanoRoute = PlanoRouteImport.update({
+  id: '/plano',
+  path: '/plano',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PremiumRoute = PremiumRouteImport.update({
+  id: '/premium',
+  path: '/premium',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizFrequenciaRoute = QuizFrequenciaRouteImport.update({
+  id: '/quiz/frequencia',
+  path: '/quiz/frequencia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizLocalRoute = QuizLocalRouteImport.update({
+  id: '/quiz/local',
+  path: '/quiz/local',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizObjetivoRoute = QuizObjetivoRouteImport.update({
+  id: '/quiz/objetivo',
+  path: '/quiz/objetivo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/intro': typeof IntroRoute
+  '/pagamento': typeof PagamentoRoute
+  '/plano': typeof PlanoRoute
+  '/premium': typeof PremiumRoute
+  '/quiz/frequencia': typeof QuizFrequenciaRoute
+  '/quiz/local': typeof QuizLocalRoute
+  '/quiz/objetivo': typeof QuizObjetivoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/intro': typeof IntroRoute
+  '/pagamento': typeof PagamentoRoute
+  '/plano': typeof PlanoRoute
+  '/premium': typeof PremiumRoute
+  '/quiz/frequencia': typeof QuizFrequenciaRoute
+  '/quiz/local': typeof QuizLocalRoute
+  '/quiz/objetivo': typeof QuizObjetivoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/intro': typeof IntroRoute
+  '/pagamento': typeof PagamentoRoute
+  '/plano': typeof PlanoRoute
+  '/premium': typeof PremiumRoute
+  '/quiz/frequencia': typeof QuizFrequenciaRoute
+  '/quiz/local': typeof QuizLocalRoute
+  '/quiz/objetivo': typeof QuizObjetivoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/intro'
+    | '/pagamento'
+    | '/plano'
+    | '/premium'
+    | '/quiz/frequencia'
+    | '/quiz/local'
+    | '/quiz/objetivo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/intro'
+    | '/pagamento'
+    | '/plano'
+    | '/premium'
+    | '/quiz/frequencia'
+    | '/quiz/local'
+    | '/quiz/objetivo'
+  id:
+    | '__root__'
+    | '/'
+    | '/intro'
+    | '/pagamento'
+    | '/plano'
+    | '/premium'
+    | '/quiz/frequencia'
+    | '/quiz/local'
+    | '/quiz/objetivo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  IntroRoute: typeof IntroRoute
+  PagamentoRoute: typeof PagamentoRoute
+  PlanoRoute: typeof PlanoRoute
+  PremiumRoute: typeof PremiumRoute
+  QuizFrequenciaRoute: typeof QuizFrequenciaRoute
+  QuizLocalRoute: typeof QuizLocalRoute
+  QuizObjetivoRoute: typeof QuizObjetivoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/intro': {
+      id: '/intro'
+      path: '/intro'
+      fullPath: '/intro'
+      preLoaderRoute: typeof IntroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pagamento': {
+      id: '/pagamento'
+      path: '/pagamento'
+      fullPath: '/pagamento'
+      preLoaderRoute: typeof PagamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plano': {
+      id: '/plano'
+      path: '/plano'
+      fullPath: '/plano'
+      preLoaderRoute: typeof PlanoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/premium': {
+      id: '/premium'
+      path: '/premium'
+      fullPath: '/premium'
+      preLoaderRoute: typeof PremiumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz/frequencia': {
+      id: '/quiz/frequencia'
+      path: '/quiz/frequencia'
+      fullPath: '/quiz/frequencia'
+      preLoaderRoute: typeof QuizFrequenciaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz/local': {
+      id: '/quiz/local'
+      path: '/quiz/local'
+      fullPath: '/quiz/local'
+      preLoaderRoute: typeof QuizLocalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz/objetivo': {
+      id: '/quiz/objetivo'
+      path: '/quiz/objetivo'
+      fullPath: '/quiz/objetivo'
+      preLoaderRoute: typeof QuizObjetivoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  IntroRoute: IntroRoute,
+  PagamentoRoute: PagamentoRoute,
+  PlanoRoute: PlanoRoute,
+  PremiumRoute: PremiumRoute,
+  QuizFrequenciaRoute: QuizFrequenciaRoute,
+  QuizLocalRoute: QuizLocalRoute,
+  QuizObjetivoRoute: QuizObjetivoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

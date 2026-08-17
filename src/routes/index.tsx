@@ -1,24 +1,65 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { PhoneFrame } from "@/components/routyfit/ui";
+import heroAthlete from "@/assets/hero-athlete.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "RoutyFit — Seu treino. Sua rotina. Seu progresso." },
+      {
+        name: "description",
+        content: "RoutyFit monta o plano de treino ideal para a sua rotina e seus objetivos.",
+      },
+      { property: "og:title", content: "RoutyFit — Seu treino. Sua rotina. Seu progresso." },
+      {
+        property: "og:description",
+        content: "RoutyFit monta o plano de treino ideal para a sua rotina e seus objetivos.",
+      },
+    ],
+  }),
+  component: Splash,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Splash() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <PhoneFrame>
+      <Link to="/intro" className="flex flex-1 flex-col">
+        <div className="px-8 pt-10 text-center">
+          <svg
+            width="58"
+            height="58"
+            viewBox="0 0 64 64"
+            className="mx-auto text-primary"
+            aria-hidden="true"
+          >
+            <path
+              d="M18 6h20a15 15 0 0 1 0 30h-6l14 22h-13L20 36V26h17a5 5 0 0 0 0-10H18V6Z"
+              fill="currentColor"
+            />
+          </svg>
+          <h1 className="mt-4 text-[34px] font-extrabold leading-none tracking-tight text-foreground">
+            Routy<span className="text-primary">Fit</span>
+          </h1>
+          <p className="mt-8 text-[20px] font-bold leading-[1.35] text-foreground">
+            Seu treino.
+            <br />
+            Sua rotina.
+            <br />
+            <span className="text-primary">Seu progresso.</span>
+          </p>
+        </div>
+        <div className="relative mt-6 flex-1 overflow-hidden">
+          <img
+            src={heroAthlete}
+            alt="Atleta de costas em uma academia com iluminação lateral"
+            width={864}
+            height={912}
+            className="absolute inset-0 size-full object-cover object-[55%_20%]"
+          />
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent" />
+          <div className="absolute bottom-16 left-1/2 size-14 -translate-x-1/2 rounded-full border-[3px] border-primary" />
+        </div>
+      </Link>
+    </PhoneFrame>
   );
 }
