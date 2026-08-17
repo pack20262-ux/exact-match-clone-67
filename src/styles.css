@@ -143,7 +143,10 @@
   }
 
   body {
-    background-color: var(--color-background);
+    background-color: black;
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
 }
+
