@@ -47,7 +47,6 @@ export function PhoneFrame({
       <div
         className={`relative flex min-h-screen w-full max-w-[420px] flex-col overflow-hidden bg-background ${className}`}
       >
-        <StatusBar />
         {children}
       </div>
     </div>
