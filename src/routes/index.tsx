@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { PhoneFrame } from "@/components/routyfit/ui";
+import { createFileRoute } from "@tanstack/react-router";
+import { PhoneFrame, PrimaryButton } from "@/components/routyfit/ui";
 import heroAthlete from "@/assets/hero-athlete.jpg";
 
 export const Route = createFileRoute("/")({
