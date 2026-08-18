@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
 function Splash() {
   return (
     <PhoneFrame>
-      <Link to="/intro" className="flex flex-1 flex-col">
+      <div className="flex flex-1 flex-col">
         <div className="px-8 pt-10 text-center">
           <svg
             width="58"
@@ -57,9 +57,12 @@ function Splash() {
             className="absolute inset-0 size-full object-cover object-[55%_20%]"
           />
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent" />
-          <div className="absolute bottom-16 left-1/2 size-14 -translate-x-1/2 rounded-full border-[3px] border-primary" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
         </div>
-      </Link>
+        <div className="px-6 pb-8">
+          <PrimaryButton to="/intro">Começar</PrimaryButton>
+        </div>
+      </div>
     </PhoneFrame>
   );
 }
