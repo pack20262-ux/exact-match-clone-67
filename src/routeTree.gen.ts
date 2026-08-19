@@ -10,7 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CriarContaRouteImport } from './routes/criar-conta'
+import { Route as EntrarRouteImport } from './routes/entrar'
 import { Route as IntroRouteImport } from './routes/intro'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PagamentoRouteImport } from './routes/pagamento'
 import { Route as PlanoRouteImport } from './routes/plano'
 import { Route as PremiumRouteImport } from './routes/premium'
@@ -23,9 +26,24 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CriarContaRoute = CriarContaRouteImport.update({
+  id: '/criar-conta',
+  path: '/criar-conta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntrarRoute = EntrarRouteImport.update({
+  id: '/entrar',
+  path: '/entrar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IntroRoute = IntroRouteImport.update({
   id: '/intro',
   path: '/intro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PagamentoRoute = PagamentoRouteImport.update({
@@ -61,7 +79,10 @@ const QuizObjetivoRoute = QuizObjetivoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/criar-conta': typeof CriarContaRoute
+  '/entrar': typeof EntrarRoute
   '/intro': typeof IntroRoute
+  '/onboarding': typeof OnboardingRoute
   '/pagamento': typeof PagamentoRoute
   '/plano': typeof PlanoRoute
   '/premium': typeof PremiumRoute
@@ -71,7 +92,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/criar-conta': typeof CriarContaRoute
+  '/entrar': typeof EntrarRoute
   '/intro': typeof IntroRoute
+  '/onboarding': typeof OnboardingRoute
   '/pagamento': typeof PagamentoRoute
   '/plano': typeof PlanoRoute
   '/premium': typeof PremiumRoute
@@ -82,7 +106,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/criar-conta': typeof CriarContaRoute
+  '/entrar': typeof EntrarRoute
   '/intro': typeof IntroRoute
+  '/onboarding': typeof OnboardingRoute
   '/pagamento': typeof PagamentoRoute
   '/plano': typeof PlanoRoute
   '/premium': typeof PremiumRoute
@@ -94,7 +121,10 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/criar-conta'
+    | '/entrar'
     | '/intro'
+    | '/onboarding'
     | '/pagamento'
     | '/plano'
     | '/premium'
@@ -104,7 +134,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/criar-conta'
+    | '/entrar'
     | '/intro'
+    | '/onboarding'
     | '/pagamento'
     | '/plano'
     | '/premium'
@@ -114,7 +147,10 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/criar-conta'
+    | '/entrar'
     | '/intro'
+    | '/onboarding'
     | '/pagamento'
     | '/plano'
     | '/premium'
@@ -125,7 +161,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CriarContaRoute: typeof CriarContaRoute
+  EntrarRoute: typeof EntrarRoute
   IntroRoute: typeof IntroRoute
+  OnboardingRoute: typeof OnboardingRoute
   PagamentoRoute: typeof PagamentoRoute
   PlanoRoute: typeof PlanoRoute
   PremiumRoute: typeof PremiumRoute
@@ -143,11 +182,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/criar-conta': {
+      id: '/criar-conta'
+      path: '/criar-conta'
+      fullPath: '/criar-conta'
+      preLoaderRoute: typeof CriarContaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entrar': {
+      id: '/entrar'
+      path: '/entrar'
+      fullPath: '/entrar'
+      preLoaderRoute: typeof EntrarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/intro': {
       id: '/intro'
       path: '/intro'
       fullPath: '/intro'
       preLoaderRoute: typeof IntroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pagamento': {
@@ -197,7 +257,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CriarContaRoute: CriarContaRoute,
+  EntrarRoute: EntrarRoute,
   IntroRoute: IntroRoute,
+  OnboardingRoute: OnboardingRoute,
   PagamentoRoute: PagamentoRoute,
   PlanoRoute: PlanoRoute,
   PremiumRoute: PremiumRoute,
