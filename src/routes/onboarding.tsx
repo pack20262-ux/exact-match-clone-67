@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Check } from "lucide-react";
 import { PhoneFrame } from "@/components/routyfit/ui";
 import { Chip } from "@/components/routyfit/app";
