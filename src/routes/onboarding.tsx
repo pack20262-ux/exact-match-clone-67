@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Check } from "lucide-react";
 import { PhoneFrame } from "@/components/routyfit/ui";
 import { Chip } from "@/components/routyfit/app";
+import { genderOptions, readGender, saveGender, type Gender } from "@/lib/gender";
 
 export const Route = createFileRoute("/onboarding")({
   head: () => ({
@@ -25,6 +26,17 @@ const focus = ["Força", "Hipertrofia", "Definição", "Performance", "Saúde"];
 function Onboarding() {
   const [level, setLevel] = useState("Iniciante");
   const [foco, setFoco] = useState("Força");
+  const [gender, setGender] = useState<Gender | null>(null);
+
+  useEffect(() => {
+    setGender(readGender());
+  }, []);
+
+  function selectGender(value: Gender) {
+    const next = gender === value ? null : value;
+    setGender(next);
+    saveGender(next);
+  }
 
   return (
     <PhoneFrame>
