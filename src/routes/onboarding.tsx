@@ -88,6 +88,21 @@ function Onboarding() {
           ))}
         </div>
 
+        <h2 className="mt-6 text-[15px] font-semibold text-foreground">
+          Como você se identifica?{" "}
+          <span className="text-[12px] font-normal text-muted-foreground">(opcional)</span>
+        </h2>
+        <div className="mt-3 flex flex-wrap gap-3">
+          {genderOptions.map((item) => (
+            <Chip
+              key={item.value}
+              label={item.label}
+              selected={item.value === gender}
+              onClick={() => selectGender(item.value)}
+            />
+          ))}
+        </div>
+
         <Link
           to="/home"
           className="mt-8 flex h-[54px] w-full items-center justify-center rounded-xl bg-primary text-[17px] font-bold text-primary-foreground"
