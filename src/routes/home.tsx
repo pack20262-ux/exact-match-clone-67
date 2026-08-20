@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Bell, Menu } from "lucide-react";
 import { PhoneFrame } from "@/components/routyfit/ui";
 import { BottomNav, StatCard } from "@/components/routyfit/app";
-import workoutUpper from "@/assets/workout-upper.jpg";
+import { getGenderWorkoutImage, useGender } from "@/lib/gender";
 
 export const Route = createFileRoute("/home")({
   head: () => ({
