@@ -17,6 +17,9 @@ export const Route = createFileRoute("/home")({
 });
 
 function HomeScreen() {
+  const gender = useGender();
+  const hero = getGenderWorkoutImage(gender);
+
   return (
     <PhoneFrame>
       <div className="flex flex-1 flex-col">
@@ -37,8 +40,9 @@ function HomeScreen() {
         <div className="mt-4 px-6">
           <div className="relative overflow-hidden rounded-2xl border border-white/8 bg-card">
             <img
-              src={workoutUpper}
-              alt="Atleta treinando com halter"
+              key={hero.src}
+              src={hero.src}
+              alt={hero.alt}
               width={1024}
               height={640}
               className="absolute inset-y-0 right-0 h-full w-1/2 object-cover"
