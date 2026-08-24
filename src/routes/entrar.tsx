@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { readIsSubscribed } from "@/lib/subscription";
+import { PAYWALL_ENABLED, readIsSubscribed } from "@/lib/subscription";
 import { Eye } from "lucide-react";
 import { PhoneFrame } from "@/components/routyfit/ui";
 import { SocialButton, TextField } from "@/components/routyfit/app";
@@ -21,7 +21,7 @@ function Entrar() {
 
   // Subscribed users land on the dashboard; everyone else goes to the offer.
   const handleSignIn = () => {
-    navigate({ to: readIsSubscribed() ? "/home" : "/premium", replace: true });
+    navigate({ to: PAYWALL_ENABLED && !readIsSubscribed() ? "/premium" : "/home", replace: true });
   };
 
   return (

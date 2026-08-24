@@ -1,6 +1,6 @@
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { useSubscription } from "@/lib/subscription";
+import { PAYWALL_ENABLED, useSubscription } from "@/lib/subscription";
 
 /**
  * Gates app routes (dashboard, workouts, progress...) behind the subscription
@@ -12,11 +12,13 @@ export function RequireSubscription({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!loading && !isSubscribed) {
+    if (PAYWALL_ENABLED && !loading && !isSubscribed) {
       navigate({ to: "/premium", replace: true });
     }
   }, [loading, isSubscribed, navigate]);
 
+  // Paywall temporarily disabled: app routes are open, gate code kept intact.
+  if (!PAYWALL_ENABLED) return <>{children}</>;
   if (loading || !isSubscribed) return null;
   return <>{children}</>;
 }
