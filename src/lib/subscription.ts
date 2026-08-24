@@ -15,6 +15,7 @@ const STORAGE_KEY = "routyfit:subscribed";
 const EVENT = "routyfit:subscription-change";
 
 export function readIsSubscribed(): boolean {
+  if (!PAYWALL_ENABLED) return true;
   if (typeof window === "undefined") return false;
   return window.localStorage.getItem(STORAGE_KEY) === "true";
 }
