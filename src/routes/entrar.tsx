@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { readIsSubscribed } from "@/lib/subscription";
+import { PAYWALL_ENABLED, readIsSubscribed } from "@/lib/subscription";
 import { Eye } from "lucide-react";
 import { PhoneFrame } from "@/components/routyfit/ui";
 import { SocialButton, TextField } from "@/components/routyfit/app";
