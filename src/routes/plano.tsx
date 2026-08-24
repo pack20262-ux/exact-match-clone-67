@@ -72,7 +72,8 @@ function Plano() {
           />
         </div>
         <div className="mt-auto pt-8">
-          <PrimaryButton to="/premium">Ver meu plano</PrimaryButton>
+          {/* Paywall temporarily bypassed: goes straight to the app. */}
+          <PrimaryButton to={PAYWALL_ENABLED ? "/premium" : "/home"}>Ver meu plano</PrimaryButton>
         </div>
       </div>
     </PhoneFrame>
