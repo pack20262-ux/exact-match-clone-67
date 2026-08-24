@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { QuizScreen } from "@/components/routyfit/quiz-screen";
-import { quizSteps } from "@/lib/quiz";
+import { getQuizStep } from "@/lib/quiz";
 
 const config = getQuizStep("local");
 
