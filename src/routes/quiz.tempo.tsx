@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { QuizScreen } from "@/components/routyfit/quiz-screen";
 import { quizSteps } from "@/lib/quiz";
 
-const config = quizSteps[5];
+const config = getQuizStep("tempo");
 
 export const Route = createFileRoute("/quiz/tempo")({
   head: () => ({

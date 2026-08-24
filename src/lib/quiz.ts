@@ -114,6 +114,12 @@ export const quizSteps: QuizStep[] = [
   },
 ];
 
+export function getQuizStep(slug: string): QuizStep {
+  const step = quizSteps.find((s) => s.slug === slug);
+  if (!step) throw new Error(`Unknown quiz step: ${slug}`);
+  return step;
+}
+
 const STORAGE_KEY = "routyfit:quiz";
 
 export function readQuizAnswers(): Record<string, string> {
