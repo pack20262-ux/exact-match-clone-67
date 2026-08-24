@@ -3,6 +3,14 @@ import { useEffect, useState } from "react";
 /** External checkout (Cakto). Replace with the real product link when available. */
 export const CAKTO_CHECKOUT_URL = "https://pay.cakto.com.br/routyfit-premium";
 
+/**
+ * Temporary bypass: paywall disabled so the funnel goes
+ * Landing → Quiz → Resultado → Dashboard.
+ * Set back to `true` to restore the Premium offer + Cakto checkout flow.
+ * All payment code stays in the codebase (/premium, /pagamento).
+ */
+export const PAYWALL_ENABLED = false;
+
 const STORAGE_KEY = "routyfit:subscribed";
 const EVENT = "routyfit:subscription-change";
 
