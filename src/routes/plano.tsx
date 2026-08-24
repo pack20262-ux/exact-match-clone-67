@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, Dumbbell, TrendingUp, CalendarDays, Timer, Crosshair } from "lucide-react";
 import { PhoneFrame, PrimaryButton, SummaryRow } from "@/components/routyfit/ui";
+import { PAYWALL_ENABLED } from "@/lib/subscription";
 
 export const Route = createFileRoute("/plano")({
   head: () => ({
