@@ -33,6 +33,12 @@ function Guarantee({ label }: { label: string }) {
 }
 
 function Pagamento() {
+  // Mocked purchase: mark access granted, then send the user to Cakto's checkout.
+  const goToCheckout = () => {
+    setIsSubscribed(true);
+    window.location.href = CAKTO_CHECKOUT_URL;
+  };
+
   return (
     <PhoneFrame>
       <h1 className="pb-4 pt-1 text-center text-[16px] font-semibold text-foreground">Pagamento</h1>

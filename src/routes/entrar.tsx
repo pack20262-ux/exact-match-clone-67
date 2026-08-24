@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { readIsSubscribed } from "@/lib/subscription";
 import { Eye } from "lucide-react";
 import { PhoneFrame } from "@/components/routyfit/ui";
 import { SocialButton, TextField } from "@/components/routyfit/app";
@@ -16,6 +17,13 @@ export const Route = createFileRoute("/entrar")({
 });
 
 function Entrar() {
+  const navigate = useNavigate();
+
+  // Subscribed users land on the dashboard; everyone else goes to the offer.
+  const handleSignIn = () => {
+    navigate({ to: readIsSubscribed() ? "/home" : "/premium", replace: true });
+  };
+
   return (
     <PhoneFrame>
       <div className="flex flex-1 flex-col px-6 pt-8 pb-8">
@@ -39,12 +47,13 @@ function Entrar() {
           Esqueceu sua senha?
         </button>
 
-        <Link
-          to="/home"
+        <button
+          type="button"
+          onClick={handleSignIn}
           className="mt-6 flex h-[54px] w-full items-center justify-center rounded-xl bg-primary text-[17px] font-bold text-primary-foreground"
         >
           Entrar
-        </Link>
+        </button>
 
         <p className="mt-5 text-center text-[13px] text-muted-foreground">ou entre com</p>
 
