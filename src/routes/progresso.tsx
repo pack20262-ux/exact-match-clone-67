@@ -1,3 +1,4 @@
+import { RequireSubscription } from "@/components/routyfit/require-subscription";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Share2 } from "lucide-react";
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/progresso")({
       },
     ],
   }),
-  component: Progresso,
+  component: GuardedProgresso,
 });
 
 const bars = [
@@ -87,5 +88,13 @@ function Progresso() {
         <BottomNav active="Progresso" />
       </div>
     </PhoneFrame>
+  );
+}
+
+function GuardedProgresso() {
+  return (
+    <RequireSubscription>
+      <Progresso />
+    </RequireSubscription>
   );
 }

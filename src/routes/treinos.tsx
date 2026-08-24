@@ -1,3 +1,4 @@
+import { RequireSubscription } from "@/components/routyfit/require-subscription";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PhoneFrame } from "@/components/routyfit/ui";
@@ -19,7 +20,7 @@ export const Route = createFileRoute("/treinos")({
       },
     ],
   }),
-  component: Treinos,
+  component: GuardedTreinos,
 });
 
 const days = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
@@ -79,5 +80,13 @@ function Treinos() {
         <BottomNav active="Treinos" />
       </div>
     </PhoneFrame>
+  );
+}
+
+function GuardedTreinos() {
+  return (
+    <RequireSubscription>
+      <Treinos />
+    </RequireSubscription>
   );
 }

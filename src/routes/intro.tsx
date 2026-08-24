@@ -48,7 +48,7 @@ function Intro() {
           <PrimaryButton to="/quiz/objetivo">Começar quiz</PrimaryButton>
           <p className="mt-4 text-center text-[13px] text-muted-foreground">
             Já tem uma conta?{" "}
-            <Link to="/pagamento" className="font-semibold text-primary">
+            <Link to="/entrar" className="font-semibold text-primary">
               Entrar
             </Link>
           </p>
