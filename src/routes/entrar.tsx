@@ -21,7 +21,7 @@ function Entrar() {
 
   // Subscribed users land on the dashboard; everyone else goes to the offer.
   const handleSignIn = () => {
-    navigate({ to: readIsSubscribed() ? "/home" : "/premium", replace: true });
+    navigate({ to: PAYWALL_ENABLED && !readIsSubscribed() ? "/premium" : "/home", replace: true });
   };
 
   return (
