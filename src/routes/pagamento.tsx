@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check } from "lucide-react";
-import { PhoneFrame, PrimaryButton } from "@/components/routyfit/ui";
+import { ArrowRight, Check } from "lucide-react";
+import { PhoneFrame } from "@/components/routyfit/ui";
+import { CAKTO_CHECKOUT_URL, setIsSubscribed } from "@/lib/subscription";
 
 export const Route = createFileRoute("/pagamento")({
   head: () => ({
@@ -74,9 +75,14 @@ function Pagamento() {
         </div>
 
         <div className="mt-auto pt-6">
-          <PrimaryButton to="/premium" arrow>
+          <button
+            type="button"
+            onClick={goToCheckout}
+            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-[17px] font-bold text-primary-foreground transition-opacity hover:opacity-90"
+          >
             Ir para o pagamento
-          </PrimaryButton>
+            <ArrowRight className="size-5 stroke-[2.5]" />
+          </button>
           <p className="mt-3 text-center text-[11px] leading-snug text-muted-foreground">
             Ao continuar, você concorda com os{" "}
             <span className="font-semibold text-primary">Termos de Uso</span> e{" "}
