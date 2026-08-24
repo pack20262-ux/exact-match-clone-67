@@ -1,6 +1,6 @@
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { useSubscription } from "@/lib/subscription";
+import { PAYWALL_ENABLED, useSubscription } from "@/lib/subscription";
 
 /**
  * Gates app routes (dashboard, workouts, progress...) behind the subscription
