@@ -1,3 +1,4 @@
+import { RequireSubscription } from "@/components/routyfit/require-subscription";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowLeft, Bookmark, ChevronRight, Maximize2, Play } from "lucide-react";
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/exercicio")({
       },
     ],
   }),
-  component: Exercicio,
+  component: GuardedExercicio,
 });
 
 const steps = [
@@ -108,5 +109,13 @@ function Exercicio() {
         <BottomNav active="Treinos" />
       </div>
     </PhoneFrame>
+  );
+}
+
+function GuardedExercicio() {
+  return (
+    <RequireSubscription>
+      <Exercicio />
+    </RequireSubscription>
   );
 }

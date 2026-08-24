@@ -1,3 +1,4 @@
+import { RequireSubscription } from "@/components/routyfit/require-subscription";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronLeft } from "lucide-react";
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/treino")({
       },
     ],
   }),
-  component: TreinoDetalhes,
+  component: GuardedTreinoDetalhes,
 });
 
 function TreinoDetalhes() {
@@ -86,5 +87,13 @@ function TreinoDetalhes() {
         <BottomNav active="Treinos" />
       </div>
     </PhoneFrame>
+  );
+}
+
+function GuardedTreinoDetalhes() {
+  return (
+    <RequireSubscription>
+      <TreinoDetalhes />
+    </RequireSubscription>
   );
 }

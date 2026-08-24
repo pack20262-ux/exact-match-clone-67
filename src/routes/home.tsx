@@ -1,3 +1,4 @@
+import { RequireSubscription } from "@/components/routyfit/require-subscription";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Bell, Menu } from "lucide-react";
 import { PhoneFrame } from "@/components/routyfit/ui";
@@ -13,7 +14,7 @@ export const Route = createFileRoute("/home")({
       { property: "og:description", content: "Veja o treino de hoje e o progresso da sua semana." },
     ],
   }),
-  component: HomeScreen,
+  component: GuardedHomeScreen,
 });
 
 function HomeScreen() {
@@ -86,5 +87,13 @@ function HomeScreen() {
         <BottomNav active="Início" />
       </div>
     </PhoneFrame>
+  );
+}
+
+function GuardedHomeScreen() {
+  return (
+    <RequireSubscription>
+      <HomeScreen />
+    </RequireSubscription>
   );
 }

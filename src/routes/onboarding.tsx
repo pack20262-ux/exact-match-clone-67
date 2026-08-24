@@ -1,3 +1,4 @@
+import { RequireSubscription } from "@/components/routyfit/require-subscription";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Check } from "lucide-react";
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/onboarding")({
       },
     ],
   }),
-  component: Onboarding,
+  component: GuardedOnboarding,
 });
 
 const levels = ["Iniciante", "Intermediário", "Avançado"];
@@ -120,5 +121,13 @@ function Onboarding() {
         </div>
       </div>
     </PhoneFrame>
+  );
+}
+
+function GuardedOnboarding() {
+  return (
+    <RequireSubscription>
+      <Onboarding />
+    </RequireSubscription>
   );
 }
