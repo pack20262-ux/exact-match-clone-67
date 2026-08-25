@@ -4,6 +4,9 @@ import { Bell, Menu } from "lucide-react";
 import { PhoneFrame } from "@/components/routyfit/ui";
 import { BottomNav, StatCard } from "@/components/routyfit/app";
 import { getGenderWorkoutImage, useGender } from "@/lib/gender";
+import { readQuizName } from "@/lib/quiz";
+import { useEffect, useState } from "react";
+
 
 export const Route = createFileRoute("/home")({
   head: () => ({
