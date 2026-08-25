@@ -10,17 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AtividadeRouteImport } from './routes/atividade'
 import { Route as CriarContaRouteImport } from './routes/criar-conta'
+import { Route as DietaRouteImport } from './routes/dieta'
 import { Route as EntrarRouteImport } from './routes/entrar'
 import { Route as ExercicioRouteImport } from './routes/exercicio'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as IntroRouteImport } from './routes/intro'
+import { Route as MeuDiaRouteImport } from './routes/meu-dia'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PagamentoRouteImport } from './routes/pagamento'
+import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as PlanoRouteImport } from './routes/plano'
 import { Route as PremiumRouteImport } from './routes/premium'
 import { Route as ProgressoRouteImport } from './routes/progresso'
 import { Route as TreinoRouteImport } from './routes/treino'
+import { Route as TreinoHojeRouteImport } from './routes/treino-hoje'
 import { Route as TreinosRouteImport } from './routes/treinos'
 import { Route as QuizAlturaRouteImport } from './routes/quiz.altura'
 import { Route as QuizConsistenciaRouteImport } from './routes/quiz.consistencia'
@@ -39,9 +44,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AtividadeRoute = AtividadeRouteImport.update({
+  id: '/atividade',
+  path: '/atividade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CriarContaRoute = CriarContaRouteImport.update({
   id: '/criar-conta',
   path: '/criar-conta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DietaRoute = DietaRouteImport.update({
+  id: '/dieta',
+  path: '/dieta',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EntrarRoute = EntrarRouteImport.update({
@@ -64,6 +79,11 @@ const IntroRoute = IntroRouteImport.update({
   path: '/intro',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MeuDiaRoute = MeuDiaRouteImport.update({
+  id: '/meu-dia',
+  path: '/meu-dia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
@@ -72,6 +92,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
 const PagamentoRoute = PagamentoRouteImport.update({
   id: '/pagamento',
   path: '/pagamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlanoRoute = PlanoRouteImport.update({
@@ -92,6 +117,11 @@ const ProgressoRoute = ProgressoRouteImport.update({
 const TreinoRoute = TreinoRouteImport.update({
   id: '/treino',
   path: '/treino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TreinoHojeRoute = TreinoHojeRouteImport.update({
+  id: '/treino-hoje',
+  path: '/treino-hoje',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TreinosRoute = TreinosRouteImport.update({
@@ -157,17 +187,22 @@ const QuizTempoRoute = QuizTempoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/atividade': typeof AtividadeRoute
   '/criar-conta': typeof CriarContaRoute
+  '/dieta': typeof DietaRoute
   '/entrar': typeof EntrarRoute
   '/exercicio': typeof ExercicioRoute
   '/home': typeof HomeRoute
   '/intro': typeof IntroRoute
+  '/meu-dia': typeof MeuDiaRoute
   '/onboarding': typeof OnboardingRoute
   '/pagamento': typeof PagamentoRoute
+  '/perfil': typeof PerfilRoute
   '/plano': typeof PlanoRoute
   '/premium': typeof PremiumRoute
   '/progresso': typeof ProgressoRoute
   '/treino': typeof TreinoRoute
+  '/treino-hoje': typeof TreinoHojeRoute
   '/treinos': typeof TreinosRoute
   '/quiz/altura': typeof QuizAlturaRoute
   '/quiz/consistencia': typeof QuizConsistenciaRoute
@@ -183,17 +218,22 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/atividade': typeof AtividadeRoute
   '/criar-conta': typeof CriarContaRoute
+  '/dieta': typeof DietaRoute
   '/entrar': typeof EntrarRoute
   '/exercicio': typeof ExercicioRoute
   '/home': typeof HomeRoute
   '/intro': typeof IntroRoute
+  '/meu-dia': typeof MeuDiaRoute
   '/onboarding': typeof OnboardingRoute
   '/pagamento': typeof PagamentoRoute
+  '/perfil': typeof PerfilRoute
   '/plano': typeof PlanoRoute
   '/premium': typeof PremiumRoute
   '/progresso': typeof ProgressoRoute
   '/treino': typeof TreinoRoute
+  '/treino-hoje': typeof TreinoHojeRoute
   '/treinos': typeof TreinosRoute
   '/quiz/altura': typeof QuizAlturaRoute
   '/quiz/consistencia': typeof QuizConsistenciaRoute
@@ -210,17 +250,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/atividade': typeof AtividadeRoute
   '/criar-conta': typeof CriarContaRoute
+  '/dieta': typeof DietaRoute
   '/entrar': typeof EntrarRoute
   '/exercicio': typeof ExercicioRoute
   '/home': typeof HomeRoute
   '/intro': typeof IntroRoute
+  '/meu-dia': typeof MeuDiaRoute
   '/onboarding': typeof OnboardingRoute
   '/pagamento': typeof PagamentoRoute
+  '/perfil': typeof PerfilRoute
   '/plano': typeof PlanoRoute
   '/premium': typeof PremiumRoute
   '/progresso': typeof ProgressoRoute
   '/treino': typeof TreinoRoute
+  '/treino-hoje': typeof TreinoHojeRoute
   '/treinos': typeof TreinosRoute
   '/quiz/altura': typeof QuizAlturaRoute
   '/quiz/consistencia': typeof QuizConsistenciaRoute
@@ -238,17 +283,22 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/atividade'
     | '/criar-conta'
+    | '/dieta'
     | '/entrar'
     | '/exercicio'
     | '/home'
     | '/intro'
+    | '/meu-dia'
     | '/onboarding'
     | '/pagamento'
+    | '/perfil'
     | '/plano'
     | '/premium'
     | '/progresso'
     | '/treino'
+    | '/treino-hoje'
     | '/treinos'
     | '/quiz/altura'
     | '/quiz/consistencia'
@@ -264,17 +314,22 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/atividade'
     | '/criar-conta'
+    | '/dieta'
     | '/entrar'
     | '/exercicio'
     | '/home'
     | '/intro'
+    | '/meu-dia'
     | '/onboarding'
     | '/pagamento'
+    | '/perfil'
     | '/plano'
     | '/premium'
     | '/progresso'
     | '/treino'
+    | '/treino-hoje'
     | '/treinos'
     | '/quiz/altura'
     | '/quiz/consistencia'
@@ -290,17 +345,22 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/atividade'
     | '/criar-conta'
+    | '/dieta'
     | '/entrar'
     | '/exercicio'
     | '/home'
     | '/intro'
+    | '/meu-dia'
     | '/onboarding'
     | '/pagamento'
+    | '/perfil'
     | '/plano'
     | '/premium'
     | '/progresso'
     | '/treino'
+    | '/treino-hoje'
     | '/treinos'
     | '/quiz/altura'
     | '/quiz/consistencia'
@@ -317,17 +377,22 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AtividadeRoute: typeof AtividadeRoute
   CriarContaRoute: typeof CriarContaRoute
+  DietaRoute: typeof DietaRoute
   EntrarRoute: typeof EntrarRoute
   ExercicioRoute: typeof ExercicioRoute
   HomeRoute: typeof HomeRoute
   IntroRoute: typeof IntroRoute
+  MeuDiaRoute: typeof MeuDiaRoute
   OnboardingRoute: typeof OnboardingRoute
   PagamentoRoute: typeof PagamentoRoute
+  PerfilRoute: typeof PerfilRoute
   PlanoRoute: typeof PlanoRoute
   PremiumRoute: typeof PremiumRoute
   ProgressoRoute: typeof ProgressoRoute
   TreinoRoute: typeof TreinoRoute
+  TreinoHojeRoute: typeof TreinoHojeRoute
   TreinosRoute: typeof TreinosRoute
   QuizAlturaRoute: typeof QuizAlturaRoute
   QuizConsistenciaRoute: typeof QuizConsistenciaRoute
@@ -351,11 +416,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/atividade': {
+      id: '/atividade'
+      path: '/atividade'
+      fullPath: '/atividade'
+      preLoaderRoute: typeof AtividadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/criar-conta': {
       id: '/criar-conta'
       path: '/criar-conta'
       fullPath: '/criar-conta'
       preLoaderRoute: typeof CriarContaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dieta': {
+      id: '/dieta'
+      path: '/dieta'
+      fullPath: '/dieta'
+      preLoaderRoute: typeof DietaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/entrar': {
@@ -386,6 +465,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IntroRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/meu-dia': {
+      id: '/meu-dia'
+      path: '/meu-dia'
+      fullPath: '/meu-dia'
+      preLoaderRoute: typeof MeuDiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
@@ -398,6 +484,13 @@ declare module '@tanstack/react-router' {
       path: '/pagamento'
       fullPath: '/pagamento'
       preLoaderRoute: typeof PagamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/plano': {
@@ -426,6 +519,13 @@ declare module '@tanstack/react-router' {
       path: '/treino'
       fullPath: '/treino'
       preLoaderRoute: typeof TreinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/treino-hoje': {
+      id: '/treino-hoje'
+      path: '/treino-hoje'
+      fullPath: '/treino-hoje'
+      preLoaderRoute: typeof TreinoHojeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/treinos': {
@@ -517,17 +617,22 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AtividadeRoute: AtividadeRoute,
   CriarContaRoute: CriarContaRoute,
+  DietaRoute: DietaRoute,
   EntrarRoute: EntrarRoute,
   ExercicioRoute: ExercicioRoute,
   HomeRoute: HomeRoute,
   IntroRoute: IntroRoute,
+  MeuDiaRoute: MeuDiaRoute,
   OnboardingRoute: OnboardingRoute,
   PagamentoRoute: PagamentoRoute,
+  PerfilRoute: PerfilRoute,
   PlanoRoute: PlanoRoute,
   PremiumRoute: PremiumRoute,
   ProgressoRoute: ProgressoRoute,
   TreinoRoute: TreinoRoute,
+  TreinoHojeRoute: TreinoHojeRoute,
   TreinosRoute: TreinosRoute,
   QuizAlturaRoute: QuizAlturaRoute,
   QuizConsistenciaRoute: QuizConsistenciaRoute,
