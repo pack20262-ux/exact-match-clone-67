@@ -8,9 +8,9 @@ export const Route = createFileRoute("/quiz/frequencia")({
   head: () => ({
     meta: [
       { title: "Quantos dias você pode treinar? | RoutyFit" },
-      { name: "description", content: "Etapa 4 de 7 do quiz RoutyFit: quantos dias você pode treinar?" },
+      { name: "description", content: "Etapa 4 de 11 do quiz RoutyFit: quantos dias você pode treinar?" },
       { property: "og:title", content: "Quantos dias você pode treinar? | RoutyFit" },
-      { property: "og:description", content: "Etapa 4 de 7 do quiz RoutyFit: quantos dias você pode treinar?" },
+      { property: "og:description", content: "Etapa 4 de 11 do quiz RoutyFit: quantos dias você pode treinar?" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

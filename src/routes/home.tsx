@@ -4,6 +4,9 @@ import { Bell, Menu } from "lucide-react";
 import { PhoneFrame } from "@/components/routyfit/ui";
 import { BottomNav, StatCard } from "@/components/routyfit/app";
 import { getGenderWorkoutImage, useGender } from "@/lib/gender";
+import { readQuizName } from "@/lib/quiz";
+import { useEffect, useState } from "react";
+
 
 export const Route = createFileRoute("/home")({
   head: () => ({
@@ -20,6 +23,11 @@ export const Route = createFileRoute("/home")({
 function HomeScreen() {
   const gender = useGender();
   const hero = getGenderWorkoutImage(gender);
+  const [name, setName] = useState<string | null>(null);
+
+  useEffect(() => {
+    setName(readQuizName());
+  }, []);
 
   return (
     <PhoneFrame>
@@ -31,8 +39,9 @@ function HomeScreen() {
 
         <div className="px-6 pt-5">
           <h1 className="text-[24px] font-extrabold leading-none tracking-tight text-foreground">
-            Olá, Maria! <span className="align-middle">💪</span>
+            Olá, {name ?? "atleta"}! <span className="align-middle">💪</span>
           </h1>
+
           <p className="mt-2 text-[14px] text-muted-foreground">
             Vamos para mais um dia de foco!
           </p>
