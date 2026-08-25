@@ -119,15 +119,69 @@ export const quizSteps: QuizStep[] = [
       { value: "tempo", label: "Falta de tempo" },
     ],
     prev: "/quiz/tempo",
+    next: "/quiz/nome",
+  },
+  {
+    slug: "nome",
+    step: 8,
+    title: "Como podemos te chamar?",
+    titleLines: ["Como podemos", "te chamar?"],
+    options: [],
+    kind: "input",
+    input: { type: "text", placeholder: "Seu nome" },
+    prev: "/quiz/consistencia",
+    next: "/quiz/idade",
+  },
+  {
+    slug: "idade",
+    step: 9,
+    title: "Qual é a sua idade?",
+    titleLines: ["Qual é a", "sua idade?"],
+    options: [],
+    kind: "input",
+    input: { type: "number", placeholder: "Ex.: 28", suffix: "anos", min: 10, max: 100 },
+    prev: "/quiz/nome",
+    next: "/quiz/peso",
+  },
+  {
+    slug: "peso",
+    step: 10,
+    title: "Qual é o seu peso?",
+    titleLines: ["Qual é o", "seu peso?"],
+    options: [],
+    kind: "input",
+    input: { type: "number", placeholder: "Ex.: 70", suffix: "kg", min: 30, max: 300 },
+    prev: "/quiz/idade",
+    next: "/quiz/altura",
+  },
+  {
+    slug: "altura",
+    step: 11,
+    title: "Qual é a sua altura?",
+    titleLines: ["Qual é a", "sua altura?"],
+    options: [],
+    kind: "input",
+    input: { type: "number", placeholder: "Ex.: 170", suffix: "cm", min: 100, max: 250 },
+    prev: "/quiz/peso",
     next: "/plano",
   },
 ];
+
+export const quizTotalSteps = quizSteps.length;
 
 export function getQuizStep(slug: string): QuizStep {
   const step = quizSteps.find((s) => s.slug === slug);
   if (!step) throw new Error(`Unknown quiz step: ${slug}`);
   return step;
 }
+
+/** First name saved in the quiz, used by the dashboard greeting. */
+export function readQuizName(): string | null {
+  const name = readQuizAnswers()["nome"]?.trim();
+  if (!name) return null;
+  return name.split(/\s+/)[0] ?? null;
+}
+
 
 const STORAGE_KEY = "routyfit:quiz";
 
