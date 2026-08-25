@@ -22,12 +22,16 @@ import { Route as PremiumRouteImport } from './routes/premium'
 import { Route as ProgressoRouteImport } from './routes/progresso'
 import { Route as TreinoRouteImport } from './routes/treino'
 import { Route as TreinosRouteImport } from './routes/treinos'
+import { Route as QuizAlturaRouteImport } from './routes/quiz.altura'
 import { Route as QuizConsistenciaRouteImport } from './routes/quiz.consistencia'
 import { Route as QuizFrequenciaRouteImport } from './routes/quiz.frequencia'
 import { Route as QuizGeneroRouteImport } from './routes/quiz.genero'
+import { Route as QuizIdadeRouteImport } from './routes/quiz.idade'
 import { Route as QuizLocalRouteImport } from './routes/quiz.local'
 import { Route as QuizNivelRouteImport } from './routes/quiz.nivel'
+import { Route as QuizNomeRouteImport } from './routes/quiz.nome'
 import { Route as QuizObjetivoRouteImport } from './routes/quiz.objetivo'
+import { Route as QuizPesoRouteImport } from './routes/quiz.peso'
 import { Route as QuizTempoRouteImport } from './routes/quiz.tempo'
 
 const IndexRoute = IndexRouteImport.update({
@@ -95,6 +99,11 @@ const TreinosRoute = TreinosRouteImport.update({
   path: '/treinos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuizAlturaRoute = QuizAlturaRouteImport.update({
+  id: '/quiz/altura',
+  path: '/quiz/altura',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuizConsistenciaRoute = QuizConsistenciaRouteImport.update({
   id: '/quiz/consistencia',
   path: '/quiz/consistencia',
@@ -110,6 +119,11 @@ const QuizGeneroRoute = QuizGeneroRouteImport.update({
   path: '/quiz/genero',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuizIdadeRoute = QuizIdadeRouteImport.update({
+  id: '/quiz/idade',
+  path: '/quiz/idade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuizLocalRoute = QuizLocalRouteImport.update({
   id: '/quiz/local',
   path: '/quiz/local',
@@ -120,9 +134,19 @@ const QuizNivelRoute = QuizNivelRouteImport.update({
   path: '/quiz/nivel',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuizNomeRoute = QuizNomeRouteImport.update({
+  id: '/quiz/nome',
+  path: '/quiz/nome',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuizObjetivoRoute = QuizObjetivoRouteImport.update({
   id: '/quiz/objetivo',
   path: '/quiz/objetivo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizPesoRoute = QuizPesoRouteImport.update({
+  id: '/quiz/peso',
+  path: '/quiz/peso',
   getParentRoute: () => rootRouteImport,
 } as any)
 const QuizTempoRoute = QuizTempoRouteImport.update({
@@ -145,12 +169,16 @@ export interface FileRoutesByFullPath {
   '/progresso': typeof ProgressoRoute
   '/treino': typeof TreinoRoute
   '/treinos': typeof TreinosRoute
+  '/quiz/altura': typeof QuizAlturaRoute
   '/quiz/consistencia': typeof QuizConsistenciaRoute
   '/quiz/frequencia': typeof QuizFrequenciaRoute
   '/quiz/genero': typeof QuizGeneroRoute
+  '/quiz/idade': typeof QuizIdadeRoute
   '/quiz/local': typeof QuizLocalRoute
   '/quiz/nivel': typeof QuizNivelRoute
+  '/quiz/nome': typeof QuizNomeRoute
   '/quiz/objetivo': typeof QuizObjetivoRoute
+  '/quiz/peso': typeof QuizPesoRoute
   '/quiz/tempo': typeof QuizTempoRoute
 }
 export interface FileRoutesByTo {
@@ -167,12 +195,16 @@ export interface FileRoutesByTo {
   '/progresso': typeof ProgressoRoute
   '/treino': typeof TreinoRoute
   '/treinos': typeof TreinosRoute
+  '/quiz/altura': typeof QuizAlturaRoute
   '/quiz/consistencia': typeof QuizConsistenciaRoute
   '/quiz/frequencia': typeof QuizFrequenciaRoute
   '/quiz/genero': typeof QuizGeneroRoute
+  '/quiz/idade': typeof QuizIdadeRoute
   '/quiz/local': typeof QuizLocalRoute
   '/quiz/nivel': typeof QuizNivelRoute
+  '/quiz/nome': typeof QuizNomeRoute
   '/quiz/objetivo': typeof QuizObjetivoRoute
+  '/quiz/peso': typeof QuizPesoRoute
   '/quiz/tempo': typeof QuizTempoRoute
 }
 export interface FileRoutesById {
@@ -190,12 +222,16 @@ export interface FileRoutesById {
   '/progresso': typeof ProgressoRoute
   '/treino': typeof TreinoRoute
   '/treinos': typeof TreinosRoute
+  '/quiz/altura': typeof QuizAlturaRoute
   '/quiz/consistencia': typeof QuizConsistenciaRoute
   '/quiz/frequencia': typeof QuizFrequenciaRoute
   '/quiz/genero': typeof QuizGeneroRoute
+  '/quiz/idade': typeof QuizIdadeRoute
   '/quiz/local': typeof QuizLocalRoute
   '/quiz/nivel': typeof QuizNivelRoute
+  '/quiz/nome': typeof QuizNomeRoute
   '/quiz/objetivo': typeof QuizObjetivoRoute
+  '/quiz/peso': typeof QuizPesoRoute
   '/quiz/tempo': typeof QuizTempoRoute
 }
 export interface FileRouteTypes {
@@ -214,12 +250,16 @@ export interface FileRouteTypes {
     | '/progresso'
     | '/treino'
     | '/treinos'
+    | '/quiz/altura'
     | '/quiz/consistencia'
     | '/quiz/frequencia'
     | '/quiz/genero'
+    | '/quiz/idade'
     | '/quiz/local'
     | '/quiz/nivel'
+    | '/quiz/nome'
     | '/quiz/objetivo'
+    | '/quiz/peso'
     | '/quiz/tempo'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -236,12 +276,16 @@ export interface FileRouteTypes {
     | '/progresso'
     | '/treino'
     | '/treinos'
+    | '/quiz/altura'
     | '/quiz/consistencia'
     | '/quiz/frequencia'
     | '/quiz/genero'
+    | '/quiz/idade'
     | '/quiz/local'
     | '/quiz/nivel'
+    | '/quiz/nome'
     | '/quiz/objetivo'
+    | '/quiz/peso'
     | '/quiz/tempo'
   id:
     | '__root__'
@@ -258,12 +302,16 @@ export interface FileRouteTypes {
     | '/progresso'
     | '/treino'
     | '/treinos'
+    | '/quiz/altura'
     | '/quiz/consistencia'
     | '/quiz/frequencia'
     | '/quiz/genero'
+    | '/quiz/idade'
     | '/quiz/local'
     | '/quiz/nivel'
+    | '/quiz/nome'
     | '/quiz/objetivo'
+    | '/quiz/peso'
     | '/quiz/tempo'
   fileRoutesById: FileRoutesById
 }
@@ -281,12 +329,16 @@ export interface RootRouteChildren {
   ProgressoRoute: typeof ProgressoRoute
   TreinoRoute: typeof TreinoRoute
   TreinosRoute: typeof TreinosRoute
+  QuizAlturaRoute: typeof QuizAlturaRoute
   QuizConsistenciaRoute: typeof QuizConsistenciaRoute
   QuizFrequenciaRoute: typeof QuizFrequenciaRoute
   QuizGeneroRoute: typeof QuizGeneroRoute
+  QuizIdadeRoute: typeof QuizIdadeRoute
   QuizLocalRoute: typeof QuizLocalRoute
   QuizNivelRoute: typeof QuizNivelRoute
+  QuizNomeRoute: typeof QuizNomeRoute
   QuizObjetivoRoute: typeof QuizObjetivoRoute
+  QuizPesoRoute: typeof QuizPesoRoute
   QuizTempoRoute: typeof QuizTempoRoute
 }
 
@@ -383,6 +435,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TreinosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quiz/altura': {
+      id: '/quiz/altura'
+      path: '/quiz/altura'
+      fullPath: '/quiz/altura'
+      preLoaderRoute: typeof QuizAlturaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/quiz/consistencia': {
       id: '/quiz/consistencia'
       path: '/quiz/consistencia'
@@ -404,6 +463,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuizGeneroRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quiz/idade': {
+      id: '/quiz/idade'
+      path: '/quiz/idade'
+      fullPath: '/quiz/idade'
+      preLoaderRoute: typeof QuizIdadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/quiz/local': {
       id: '/quiz/local'
       path: '/quiz/local'
@@ -418,11 +484,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuizNivelRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quiz/nome': {
+      id: '/quiz/nome'
+      path: '/quiz/nome'
+      fullPath: '/quiz/nome'
+      preLoaderRoute: typeof QuizNomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/quiz/objetivo': {
       id: '/quiz/objetivo'
       path: '/quiz/objetivo'
       fullPath: '/quiz/objetivo'
       preLoaderRoute: typeof QuizObjetivoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz/peso': {
+      id: '/quiz/peso'
+      path: '/quiz/peso'
+      fullPath: '/quiz/peso'
+      preLoaderRoute: typeof QuizPesoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/quiz/tempo': {
@@ -449,12 +529,16 @@ const rootRouteChildren: RootRouteChildren = {
   ProgressoRoute: ProgressoRoute,
   TreinoRoute: TreinoRoute,
   TreinosRoute: TreinosRoute,
+  QuizAlturaRoute: QuizAlturaRoute,
   QuizConsistenciaRoute: QuizConsistenciaRoute,
   QuizFrequenciaRoute: QuizFrequenciaRoute,
   QuizGeneroRoute: QuizGeneroRoute,
+  QuizIdadeRoute: QuizIdadeRoute,
   QuizLocalRoute: QuizLocalRoute,
   QuizNivelRoute: QuizNivelRoute,
+  QuizNomeRoute: QuizNomeRoute,
   QuizObjetivoRoute: QuizObjetivoRoute,
+  QuizPesoRoute: QuizPesoRoute,
   QuizTempoRoute: QuizTempoRoute,
 }
 export const routeTree = rootRouteImport
