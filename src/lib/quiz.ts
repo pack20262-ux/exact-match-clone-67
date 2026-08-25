@@ -10,9 +10,18 @@ export type QuizStep = {
   options: QuizOption[];
   prev: string | null;
   next: string;
+  kind?: "options" | "input";
+  input?: {
+    type: "text" | "number";
+    placeholder: string;
+    suffix?: string;
+    min?: number;
+    max?: number;
+  };
 };
 
 export const quizSteps: QuizStep[] = [
+
   {
     slug: "objetivo",
     step: 1,
