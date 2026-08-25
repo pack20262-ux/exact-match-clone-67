@@ -8,9 +8,9 @@ export const Route = createFileRoute("/quiz/local")({
   head: () => ({
     meta: [
       { title: "Onde você costuma treinar? | RoutyFit" },
-      { name: "description", content: "Etapa 5 de 7 do quiz RoutyFit: onde você costuma treinar?" },
+      { name: "description", content: "Etapa 5 de 11 do quiz RoutyFit: onde você costuma treinar?" },
       { property: "og:title", content: "Onde você costuma treinar? | RoutyFit" },
-      { property: "og:description", content: "Etapa 5 de 7 do quiz RoutyFit: onde você costuma treinar?" },
+      { property: "og:description", content: "Etapa 5 de 11 do quiz RoutyFit: onde você costuma treinar?" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

@@ -8,9 +8,9 @@ export const Route = createFileRoute("/quiz/objetivo")({
   head: () => ({
     meta: [
       { title: "Qual é o seu principal objetivo? | RoutyFit" },
-      { name: "description", content: "Etapa 1 de 7 do quiz RoutyFit: qual é o seu principal objetivo?" },
+      { name: "description", content: "Etapa 1 de 11 do quiz RoutyFit: qual é o seu principal objetivo?" },
       { property: "og:title", content: "Qual é o seu principal objetivo? | RoutyFit" },
-      { property: "og:description", content: "Etapa 1 de 7 do quiz RoutyFit: qual é o seu principal objetivo?" },
+      { property: "og:description", content: "Etapa 1 de 11 do quiz RoutyFit: qual é o seu principal objetivo?" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
